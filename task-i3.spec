@@ -36,6 +36,7 @@ Requires: bc
 Requires: pavucontrol-qt
 Requires: i3lock-color
 Requires: papirus-icon-theme
+Requires:	fonts-ttf-iosevka
 
 %description
 %summary.
