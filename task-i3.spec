@@ -36,6 +36,7 @@ Requires: pavucontrol-qt
 Requires: i3lock-color
 Requires: papirus-icon-theme
 Requires: fonts-ttf-iosevka
+Requires: fonts-ttf-liberation
 
 %description
 %summary.
