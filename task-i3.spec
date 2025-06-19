@@ -35,6 +35,7 @@ Requires: networkmanager-applet
 Requires: bc
 Requires: pavucontrol-qt
 Requires: i3lock-color
+Requires: papirus-icon-theme
 
 %description
 %summary.
