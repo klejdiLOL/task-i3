@@ -40,7 +40,7 @@ Requires: i3lock-color
 %summary.
 
 %prep
-%autosetup -n task-i3--main -p1
+%autosetup -n %{name}-main -p1
 
 %install
 install -d %{buildroot}%{_sysconfdir}/skel/.config/conky %{buildroot}%{_sysconfdir}/skel/.config/i3 %{buildroot}%{_sysconfdir}/skel/.config/i3lock-color/scripts %{buildroot}%{_sysconfdir}/skel/.config/kitty %{buildroot}%{_sysconfdir}/skel/.config/micro/colorschemes %{buildroot}%{_sysconfdir}/skel/.config/picom %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi %{buildroot}%{_bindir}
