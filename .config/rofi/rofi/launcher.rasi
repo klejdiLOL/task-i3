@@ -1,0 +1,118 @@
+/* launcher.rasi */
+/* author: Klejdi Janari (klejdiLOL) */
+/* OpenMandriva */
+/* https://forum.openmandriva.org/ */
+/* Location: ~/.config/polybar/scripts/rofi/launcher.rasi */
+
+configuration {
+	font:							"Iosevka Nerd Font 10";
+    show-icons:                     true;
+	icon-theme: 					"Papirus";
+    display-drun: 					"";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+@import "colors.rasi"
+
+window {
+    location: southwest;
+    anchor: southwest;
+    x-offset: 0;
+    y-offset: -38;
+    width: 370px; /* Adjust width as needed */
+    height: 440px; /* Adjust height as needed */
+    border: 2px;
+    border-color: @border;
+    border-radius: 0px;
+    transparency: "real";
+    background-color: @background;
+    text-color: @foreground;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 						2px 0px 0px 4px;
+	background-color: 				@al;
+	text-color: 					@fg;
+	font:							"Liberation Sans Mono 12";
+}
+
+entry {
+    background-color:               @al;
+    text-color:                     @fg;
+    placeholder-color:              @fg;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Search...";
+	padding: 						2px 0px 0px 6px;
+    blink:                          true;
+}
+
+inputbar {
+	children: 						[ prompt, entry ];
+    background-color:               @bga;
+    text-color:                     @fg;
+    expand:                         false;
+	border:							0px;
+    border-radius:                  0px;
+	border-color:					@ac;
+    margin:                         0px;
+    padding:                        8px;
+}
+
+listview {
+    background-color:               @al;
+    padding:                        0px;
+    columns:                        2;
+    lines:                          7;
+    spacing:                        6px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @al;
+	border:							0px;
+    border-radius:                  0px;
+	border-color:					@ac;
+    children:                       [ inputbar, listview ];
+    spacing:                       	6px;
+    padding:                        6px;
+}
+
+element {
+    background-color:               @al;
+    text-color:                     @fga;
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        8px;
+}
+
+element-icon {
+    background-color:               transparent;
+    text-color:               		inherit;
+    size:                           24px;
+    border:                         0px;
+}
+
+element-text {
+    background-color:               transparent;
+    text-color:               		inherit;
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         0px 2.5px 0px 2.5px;
+}
+
+element selected {
+    background-color:               @bga;
+    text-color:                     @fg;
+	border:							0px 0px 0px 0px;
+    border-radius:                  0px;
+    border-color:                  	@ac;
+}
