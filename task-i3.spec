@@ -7,9 +7,10 @@
 Name:		task-i3
 Version:	0~%{bumpver}.git%{shortcommit}
 Release:	2
-Source0:	https://github.com/klejdiLOL/i3-Dotfiles-OM-personal_only-/archive/refs/heads/main.zip
+Source0:	https://github.com/klejdiLOL/task-i3/archive/refs/heads/main.zip
+#https://github.com/klejdiLOL/i3-Dotfiles-OM-personal_only-/archive/refs/heads/main.zip
 #https://github.com/vuatech/i3-Dotfiles-OM-personal_only-/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
-Summary:	I3 Custom stuff
+Summary:	i3 configuration's required packages 'n DIRs
 URL:		https://github.com/klejdiLOL/i3-Dotfiles-OM-personal_only-
 License:	GPL
 Group:		test
