@@ -1,0 +1,37 @@
+# om-dark.micro
+# author: Wilson Phillips
+# OpenMandriva
+# https://forum.openmandriva.org/
+# Location: ~/.config/micro/colorschemes/om-dark.micro
+
+color-link default "#ecf2ff,#21242b"
+color-link comment "#afb3bd,#21242b"
+color-link identifier "#40a5da,#21242b"
+color-link constant "#c14afd,#21242b"
+color-link constant.string "#dac040,#21242b"
+color-link constant.string.char "#4bff8a,#21242b"
+color-link statement "#cc2263,#21242b"
+color-link symbol.operator "#cc2263,#21242b"
+color-link preproc "#da7340,#21242b"
+color-link type "#40a5da,#21242b"
+color-link special "#40da76,#21242b"
+color-link underlined "#cc2263,#21242b"
+color-link error "bold #da7340,#21242b"
+color-link todo "bold #cc2263,#21242b"
+color-link hlsearch "#21242b,#dac040"
+color-link statusline "#21242b,#ecf2ff"
+color-link tabbar "#21242b,#ecf2ff"
+color-link indent-char "#505050,#21242b"
+color-link line-number "#afb3bd,#31363b"
+color-link current-line-number "#afb3bd,#21242b"
+color-link diff-added "#2a904e"
+color-link diff-modified "#dac040"
+color-link diff-deleted "#871742"
+color-link gutter-error "#da7340,#21242b"
+color-link gutter-warning "#dac040,#21242b"
+color-link cursor-line "#31363b"
+color-link color-column "#31363b"
+#No extended types; Plain brackets.
+color-link type.extended "default"
+#color-link symbol.brackets "default"
+color-link symbol.tag "#a740da,#282828"
