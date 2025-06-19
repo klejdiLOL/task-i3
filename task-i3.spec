@@ -11,7 +11,7 @@ Source0:	https://github.com/klejdiLOL/task-i3/archive/refs/heads/main.zip
 #https://github.com/klejdiLOL/i3-Dotfiles-OM-personal_only-/archive/refs/heads/main.zip
 #https://github.com/vuatech/i3-Dotfiles-OM-personal_only-/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 Summary:	i3 configuration's required packages 'n DIRs
-URL:		https://github.com/klejdiLOL/i3-Dotfiles-OM-personal_only-
+URL:		https://github.com/klejdiLOL/task-i3
 License:	GPL
 Group:		test
 
@@ -40,7 +40,7 @@ Requires: i3lock-color
 %summary.
 
 %prep
-%autosetup -n i3-Dotfiles-OM-personal_only--main -p1
+%autosetup -n task-i3--main -p1
 
 %install
 install -d %{buildroot}%{_sysconfdir}/skel/.config/conky %{buildroot}%{_sysconfdir}/skel/.config/i3 %{buildroot}%{_sysconfdir}/skel/.config/i3lock-color/scripts %{buildroot}%{_sysconfdir}/skel/.config/kitty %{buildroot}%{_sysconfdir}/skel/.config/micro/colorschemes %{buildroot}%{_sysconfdir}/skel/.config/picom %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi %{buildroot}%{_bindir}
