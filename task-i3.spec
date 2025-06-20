@@ -8,7 +8,6 @@ Name:		task-i3
 Version:	0~%{bumpver}.git%{shortcommit}
 Release:	2
 Source0:	https://github.com/klejdiLOL/task-i3/archive/refs/heads/main.zip
-#https://github.com/klejdiLOL/i3-Dotfiles-OM-personal_only-/archive/refs/heads/main.zip
 #https://github.com/vuatech/i3-Dotfiles-OM-personal_only-/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 Summary:	i3 configuration's required packages 'n DIRs
 URL:		https://github.com/klejdiLOL/task-i3
@@ -35,12 +34,15 @@ Requires: networkmanager-applet
 Requires: bc
 Requires: pavucontrol-qt
 Requires: i3lock-color
+Requires: papirus-icon-theme
+Requires: fonts-ttf-iosevka
+Requires: fonts-ttf-liberation
 
 %description
 %summary.
 
 %prep
-%autosetup -n task-i3--main -p1
+%autosetup -n %{name}-main -p1
 
 %install
 install -d %{buildroot}%{_sysconfdir}/skel/.config/conky %{buildroot}%{_sysconfdir}/skel/.config/i3 %{buildroot}%{_sysconfdir}/skel/.config/i3lock-color/scripts %{buildroot}%{_sysconfdir}/skel/.config/kitty %{buildroot}%{_sysconfdir}/skel/.config/micro/colorschemes %{buildroot}%{_sysconfdir}/skel/.config/picom %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi %{buildroot}%{_bindir}
