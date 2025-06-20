@@ -20,8 +20,8 @@ window {
 	transparency: "real";
 	background-color: @bg;
 	text-color: @fg;
-	border: 0px 0px 4px 0px;
-	border-color: @ac;
+	border: 3px 3px 3px 3px;
+	border-color: @fga;
 	border-radius: 0px;
 	width: 300px;
 }
