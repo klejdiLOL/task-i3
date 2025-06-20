@@ -26,11 +26,11 @@ window {
     width: 370px; /* Adjust width as needed */
     height: 440px; /* Adjust height as needed */
     border: 2px;
-    border-color: @border;
+    border-color: @ac;
     border-radius: 0px;
     transparency: "real";
-    background-color: @background;
-    text-color: @foreground;
+    background-color: @bg;
+    text-color: @fg;
 }
 
 prompt {
