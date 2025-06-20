@@ -54,10 +54,10 @@ bindsym $mod+Print exec $scrsht
 bindsym $mod+Shift+r exec $ranger
 
 # start the ROFI APP MENU
-bindsym $mod+d exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/rofi/launcher.rasi"
+bindsym $mod+d exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/scripts/rofi/launcher.rasi"
 
 # start the ROFI POWER MENU
-bindsym $mod+P exec ~/.config/rofi/powermenu.sh
+bindsym $mod+P exec ~/.config/polybar/scripts/powermenu.sh
 
 # start CONKY (keep it running)
 exec_always --no-startup-id ~/.config/conky/conky-launch.sh
