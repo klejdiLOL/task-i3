@@ -22,11 +22,12 @@ window {
     location: southwest;
     anchor: southwest;
     x-offset: 0;
-    y-offset: -38;
+    y-offset: -39;
     width: 370px; /* Adjust width as needed */
     height: 440px; /* Adjust height as needed */
     border: 2px;
-    border-color: @ac;
+    border-color: @fga;
+    border: 3px 3px 3px 3px;
     border-radius: 0px;
     transparency: "real";
     background-color: @bg;
