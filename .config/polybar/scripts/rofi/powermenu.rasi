@@ -9,8 +9,8 @@ configuration {
 	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
 	hover-select: true;
-	me-select-entry: "";
-	me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+	me-select-entry: "MousePrimary";
+	me-accept-entry: "!MousePrimary";
 }
 
 @import "colors.rasi"
