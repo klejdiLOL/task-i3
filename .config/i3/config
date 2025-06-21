@@ -51,7 +51,7 @@ bindsym $mod+F3 exec $fbrowser
 bindsym $mod+Print exec $scrsht
 
 # start RANGER
-bindsym $mod+Shift+r exec $ranger
+bindsym $mod+Shift+F2 exec $ranger
 
 # start the ROFI APP MENU
 bindsym $mod+d exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/scripts/rofi/launcher.rasi"
