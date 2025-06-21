@@ -1,7 +1,7 @@
 #!/bin/bash
 # ── CONFIG ────────────────────────────────────────────
 
-# Bold Fonts – adjust these if your system uses different naming conventions
+# Bold Fonts – adjust these if needed
 BOLD_FONT1="JetBrainsMono Nerd Font Bold"
 BOLD_FONT2="Liberation Mono Bold"
 BOLD_FONT3="Noto Sans Mono Bold"
@@ -9,16 +9,22 @@ BOLD_FONT3="Noto Sans Mono Bold"
 # Screenshot path
 IMG="/tmp/i3lock_blur.png"
 
-# ── DYNAMIC FONT SIZE CALCULATION ───────────────────
+# ── DYNAMIC SCREEN & FONT CALCULATION ────────────────
 
-# Get screen resolution width (requires xrandr)
-SCREEN_WIDTH=$(xrandr | grep '*' | awk '{print $1}' | head -n1 | cut -d 'x' -f1)
-# Define a base width for scaling (modify if needed)
+# Get screen width and height
+SCREEN_RES=$(xrandr | grep '*' | awk '{print $1}' | head -n1)
+SCREEN_WIDTH=$(echo $SCREEN_RES | cut -d 'x' -f1)
+SCREEN_HEIGHT=$(echo $SCREEN_RES | cut -d 'x' -f2)
+
+# Define base resolution
 BASE_WIDTH=1920
-# Calculate scaling factor (e.g., for a 1280px wide screen, scale ≈ 0.66)
-SCALE=$(echo "scale=2; $SCREEN_WIDTH / $BASE_WIDTH" | bc)
+BASE_HEIGHT=1080
 
-# Base font sizes for a 1920-wide display
+# Calculate scaling factors
+SCALE_W=$(echo "scale=2; $SCREEN_WIDTH / $BASE_WIDTH" | bc)
+SCALE_H=$(echo "scale=2; $SCREEN_HEIGHT / $BASE_HEIGHT" | bc)
+
+# Base sizes
 BASE_TIME_SIZE=48
 BASE_DATE_SIZE=24
 BASE_LAYOUT_SIZE=20
@@ -26,30 +32,36 @@ BASE_GREETER_SIZE=32
 BASE_VERIF_SIZE=20
 BASE_WRONG_SIZE=20
 
-# Calculate new sizes (rounded to an integer)
-TIME_SIZE=$(printf "%.0f" $(echo "$BASE_TIME_SIZE * $SCALE" | bc))
-DATE_SIZE=$(printf "%.0f" $(echo "$BASE_DATE_SIZE * $SCALE" | bc))
-LAYOUT_SIZE=$(printf "%.0f" $(echo "$BASE_LAYOUT_SIZE * $SCALE" | bc))
-GREETER_SIZE=$(printf "%.0f" $(echo "$BASE_GREETER_SIZE * $SCALE" | bc))
-VERIF_SIZE=$(printf "%.0f" $(echo "$BASE_VERIF_SIZE * $SCALE" | bc))
-WRONG_SIZE=$(printf "%.0f" $(echo "$BASE_WRONG_SIZE * $SCALE" | bc))
+# Calculate font sizes (rounded to int)
+TIME_SIZE=$(printf "%.0f" $(echo "$BASE_TIME_SIZE * $SCALE_W" | bc))
+DATE_SIZE=$(printf "%.0f" $(echo "$BASE_DATE_SIZE * $SCALE_W" | bc))
+LAYOUT_SIZE=$(printf "%.0f" $(echo "$BASE_LAYOUT_SIZE * $SCALE_W" | bc))
+GREETER_SIZE=$(printf "%.0f" $(echo "$BASE_GREETER_SIZE * $SCALE_W" | bc))
+VERIF_SIZE=$(printf "%.0f" $(echo "$BASE_VERIF_SIZE * $SCALE_W" | bc))
+WRONG_SIZE=$(printf "%.0f" $(echo "$BASE_WRONG_SIZE * $SCALE_W" | bc))
 
-# Optional debug info
-echo "Screen width: $SCREEN_WIDTH, Scale: $SCALE"
-echo "Font sizes: Time=$TIME_SIZE, Date=$DATE_SIZE, Layout=$LAYOUT_SIZE, Greeter=$GREETER_SIZE, Verif=$VERIF_SIZE, Wrong=$WRONG_SIZE"
+# Position offsets (relative to screen height)
+GREETER_OFFSET=$(printf "%.0f" $(echo "-$SCREEN_HEIGHT * 0.04" | bc)) # ~4% up
+TIME_OFFSET=$(printf "%.0f" $(echo "-$SCREEN_HEIGHT * 0.01" | bc))    # ~1% up
+DATE_OFFSET=$(printf "%.0f" $(echo "$SCREEN_HEIGHT * 0.03" | bc))     # ~3% down
+LAYOUT_OFFSET=$(printf "%.0f" $(echo "$SCREEN_HEIGHT * 0.055" | bc))  # ~5.5% down
+VERIF_OFFSET=$LAYOUT_OFFSET
+WRONG_OFFSET=$LAYOUT_OFFSET
 
-# ── SETUP: CAPTURE AND BLUR SCREEN ───────────────────
+# Debug info
+echo "Resolution: ${SCREEN_WIDTH}x${SCREEN_HEIGHT}"
+echo "Font Sizes: Time=$TIME_SIZE, Date=$DATE_SIZE, Layout=$LAYOUT_SIZE, Greeter=$GREETER_SIZE"
+echo "Offsets: Greeter=$GREETER_OFFSET, Time=$TIME_OFFSET, Date=$DATE_OFFSET, Layout=$LAYOUT_OFFSET"
 
-# Capture the current screen and blur it (using ImageMagick)
+# ── SETUP: SCREENSHOT & BLUR ──────────────────────────
+
 import -window root "$IMG"
-# For IMv7+, use "magick" (instead of the deprecated "convert")
 magick "$IMG" -blur 0x8 "$IMG"
 
-# Kill any lingering processes (e.g., any old sound listeners)
 pkill -f "aplay.*click.wav" 2>/dev/null
 pkill -f "evtest" 2>/dev/null
 
-# ── LOCKSCREEN ─────────────────────────────────────────
+# ── LOCKSCREEN ────────────────────────────────────────
 
 i3lock \
     --image "$IMG" \
@@ -89,9 +101,9 @@ i3lock \
     --greeter-size=$GREETER_SIZE \
     --verif-size=$VERIF_SIZE \
     --wrong-size=$WRONG_SIZE \
-    --greeter-pos="ix:iy-40" \
-    --time-pos="ix:iy-10" \
-    --date-pos="ix:iy+30" \
-    --layout-pos="ix:iy+60" \
-    --verif-pos="ix:iy+60" \
-    --wrong-pos="ix:iy+60"
+    --greeter-pos="ix:iy$GREETER_OFFSET" \
+    --time-pos="ix:iy$TIME_OFFSET" \
+    --date-pos="ix:iy+$DATE_OFFSET" \
+    --layout-pos="ix:iy+$LAYOUT_OFFSET" \
+    --verif-pos="ix:iy+$VERIF_OFFSET" \
+    --wrong-pos="ix:iy+$WRONG_OFFSET"
