@@ -63,7 +63,7 @@ install -Dm 775 .config/polybar/colors.ini %{buildroot}%{_sysconfdir}/skel/.conf
 install -Dm 775 .config/polybar/config.ini %{buildroot}%{_sysconfdir}/skel/.config/polybar/
 install -Dm 775 .config/polybar/launch.sh %{buildroot}%{_sysconfdir}/skel/.config/polybar/
 install -Dm 775 .config/polybar/modules.ini %{buildroot}%{_sysconfdir}/skel/.config/polybar/
-install -Dm 775 .config/polybar/user_modules.ini %{buildroot}%{_sysconfdir}/skel/.config/polybar/
+install -Dm 775 .config/polybar/extra_modules.ini %{buildroot}%{_sysconfdir}/skel/.config/polybar/
 install -Dm 775 .config/polybar/scripts/launcher.sh %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/
 install -Dm 775 .config/polybar/scripts/powermenu.sh %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/
 install -Dm 775 .config/polybar/scripts/rofi/colors.rasi %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi/
