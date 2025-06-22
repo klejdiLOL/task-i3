@@ -75,15 +75,6 @@ install -Dm 775 .config/polybar/scripts/rofi/powermenu.rasi %{buildroot}%{_sysco
 install -Dm 775 .config/polybar/scripts/rofi/styles.rasi %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi/
 install -Dm 775 install-i3-theme %{buildroot}%{_bindir}/
 
-install -Dm 775 .config/rofi/launcher.sh %{buildroot}%{_sysconfdir}/skel/.config/rofi/
-install -Dm 775 .config/rofi/powermenu.sh %{buildroot}%{_sysconfdir}/skel/.config/rofi/
-install -Dm 775 .config/rofi/rofi/colors.rasi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi/
-install -Dm 775 .config/rofi/rofi/confirm.rasi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi/
-install -Dm 775 .config/rofi/rofi/launcher.rasi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi/
-install -Dm 775 .config/rofi/rofi/message.rasi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi/
-install -Dm 775 .config/rofi/rofi/powermenu.rasi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi/
-install -Dm 775 .config/rofi/rofi/styles.rasi %{buildroot}%{_sysconfdir}/skel/.config/rofi/rofi/
-
 install -Dm 775 install-i3-theme %{buildroot}%{_bindir}/
 
 install -Dm 775 .local/share/color-schemes/OMDark.colors %{buildroot}%{_sysconfdir}/skel/.local/share/color-schemes/
