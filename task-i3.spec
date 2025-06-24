@@ -40,6 +40,8 @@ Requires: fonts-ttf-liberation
 Requires: arandr
 Requires: polkit-kde-agent-1
 Requires: kwallet-pam
+Requires: sddm-theme-breeze
+Requires: sddm
 
 %description
 %summary.
