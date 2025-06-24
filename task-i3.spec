@@ -39,6 +39,7 @@ Requires: fonts-ttf-iosevka
 Requires: fonts-ttf-liberation
 Requires: arandr
 Requires: plasma6-polkit-kde-agent-1
+Requires: plasma6-kwallet-pam
 
 %description
 %summary.
