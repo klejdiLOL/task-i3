@@ -38,6 +38,7 @@ Requires: papirus-icon-theme
 Requires: fonts-ttf-iosevka
 Requires: fonts-ttf-liberation
 Requires: arandr
+Requires: plasma6-polkit-kde-agent-1
 
 %description
 %summary.
