@@ -42,6 +42,7 @@ Requires: polkit-kde-agent-1
 Requires: kwallet-pam
 Requires: sddm-theme-breeze
 Requires: sddm
+Requires: distro-release-theme
 
 %description
 %summary.
