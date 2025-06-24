@@ -71,6 +71,9 @@ exec_always --no-startup-id autotiling
 # start Polybar (keep it running)
 exec_always ~/.config/polybar/launch.sh &
 
+# start kde polkit agent for gui sudo access (keep it running)
+exec --no-startup-id /usr/lib64/libexec/polkit-kde-authentication-agent-1
+
 ###################
 # Volume Controls #
 ###################
