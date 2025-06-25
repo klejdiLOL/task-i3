@@ -14,6 +14,9 @@ configuration {
     fullscreen:                     false;
 	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
+    hover-select: true;
+    me-select-entry: "MousePrimary";
+    me-accept-entry: "!MousePrimary";
 }
 
 @import "colors.rasi"
