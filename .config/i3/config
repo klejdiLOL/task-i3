@@ -20,7 +20,7 @@ set $terminal kitty
 set $fbrowser pcmanfm-qt
 
 # set SCREENSHOT UTILITY
-set $scrsht mate-screenshot
+set $scrsht flameshot gui
 
 # set RANGER
 set $ranger "kitty ranger"
