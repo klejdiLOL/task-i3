@@ -42,6 +42,7 @@ Requires: kwallet-pam
 Requires: sddm-theme-breeze
 Requires: sddm
 Requires: distro-release-theme
+Requires: flameshot
 
 %description
 %summary.
