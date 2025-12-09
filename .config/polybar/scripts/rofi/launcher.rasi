@@ -29,7 +29,7 @@ window {
     width: 370px; /* Adjust width as needed */
     height: 440px; /* Adjust height as needed */
     border: 2px;
-    border-color: @fga;
+    border-color: @ac;
     border: 3px 3px 3px 3px;
     border-radius: 0px;
     transparency: "real";
