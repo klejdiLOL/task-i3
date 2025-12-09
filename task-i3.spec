@@ -43,6 +43,7 @@ Requires: sddm-theme-breeze
 Requires: sddm
 Requires: distro-release-theme
 Requires: flameshot
+Requires: pcmanfm-qt
 
 %description
 %summary.
