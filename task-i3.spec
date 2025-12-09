@@ -44,6 +44,7 @@ Requires: sddm
 Requires: distro-release-theme
 Requires: flameshot
 Requires: pcmanfm-qt
+Requires: dunst
 
 %description
 %summary.
