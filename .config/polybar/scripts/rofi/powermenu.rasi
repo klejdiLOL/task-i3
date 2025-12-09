@@ -1,3 +1,9 @@
+/* powermenu.rasi */
+/* author: Klejdi Janari (klejdiLOL) */
+/* OpenMandriva */
+/* https://forum.openmandriva.org/ */
+/* Location: ~/.config/polybar/scripts/rofi/powermenu.rasi */
+
 configuration {
 	font:							"JetBrains Mono Nerd Font 10";
 	show-icons:                     true;
@@ -58,14 +64,14 @@ entry {
 
 inputbar {
 	children: [ textbox-prompt-colon, prompt ];
-	background-color: @bga;
-	text-color: @fg;
+	background-color: @bg;
+	text-color: @bg;
 	expand: false;
 	border: 0px;
 	border-radius: 0px;
-	border-color: @ac;
+	border-color: @bg;
 	margin: 0px;
-	padding: 8px;
+	padding: 5px;
 }
 
 listview {
