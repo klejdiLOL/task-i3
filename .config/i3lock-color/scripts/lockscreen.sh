@@ -30,6 +30,7 @@ BOLD_FONT3="Liberation Sans:style=Bold"
 # Screenshot path
 IMG="/tmp/i3lock_blur.png"
 
+
 # ── DYNAMIC SCREEN & FONT CALCULATION ────────────────
 
 # Get screen width and height
@@ -37,22 +38,23 @@ SCREEN_RES=$(xrandr | grep '*' | awk '{print $1}' | head -n1)
 SCREEN_WIDTH=$(echo $SCREEN_RES | cut -d 'x' -f1)
 SCREEN_HEIGHT=$(echo $SCREEN_RES | cut -d 'x' -f2)
 
+# Base resolution for scaling reference
 BASE_WIDTH=1920
 BASE_HEIGHT=1080
 
-# Calculate scaling factors (your original values preserved)
-SCALE_W=0.5
-SCALE_H=0.5
+# Calculate scaling factors relative to base resolution
+SCALE_W=$(echo "scale=4; $SCREEN_WIDTH / $BASE_WIDTH" | bc)
+SCALE_H=$(echo "scale=4; $SCREEN_HEIGHT / $BASE_HEIGHT" | bc)
 
 # Base sizes
-BASE_TIME_SIZE=60
-BASE_DATE_SIZE=40
+BASE_TIME_SIZE=40
+BASE_DATE_SIZE=30
 BASE_LAYOUT_SIZE=20
-BASE_GREETER_SIZE=32
-BASE_VERIF_SIZE=40
-BASE_WRONG_SIZE=40
+BASE_GREETER_SIZE=25
+BASE_VERIF_SIZE=30
+BASE_WRONG_SIZE=30
 
-# Apply HiDPI multiplier on top of your original scaling
+# Apply scaling factors and HiDPI multiplier
 TIME_SIZE=$(printf "%.0f" $(echo "$BASE_TIME_SIZE * $SCALE_W * $SCALE_FACTOR" | bc))
 DATE_SIZE=$(printf "%.0f" $(echo "$BASE_DATE_SIZE * $SCALE_W * $SCALE_FACTOR" | bc))
 LAYOUT_SIZE=$(printf "%.0f" $(echo "$BASE_LAYOUT_SIZE * $SCALE_W * $SCALE_FACTOR" | bc))
@@ -71,27 +73,32 @@ WRONG_OFFSET=$LAYOUT_OFFSET
 # Debug info
 echo "Resolution: ${SCREEN_WIDTH}x${SCREEN_HEIGHT}"
 echo "DPI: $DPI_RAW   ScaleFactor: $SCALE_FACTOR"
-echo "Font Sizes: Time=$TIME_SIZE, Date=$DATE_SIZE, Layout=$LAYOUT_SIZE, Greeter=$GREETER_SIZE"
+echo "Font Sizes: Time=$TIME_SIZE, Date=$DATE_SIZE, Layout=$LAYOUT_SIZE, Greeter=$GREETER_SIZE, Verif=$VERIF_SIZE, Wrong=$WRONG_SIZE"
 echo "Offsets: Greeter=$GREETER_OFFSET, Time=$TIME_OFFSET, Date=$DATE_OFFSET, Layout=$LAYOUT_OFFSET"
 
 # ── SETUP: SCREENSHOT & BLUR ──────────────────────────
 
+# Take screenshot of the current desktop
 import -window root "$IMG"
+
+# Apply blur
 magick "$IMG" -blur 0x8 "$IMG"
 
+# Kill any leftover sound or input test processes
 pkill -f "aplay.*click.wav" 2>/dev/null
 pkill -f "evtest" 2>/dev/null
 
-# –– COLORS ––––––––––––––––––––––––––––––––––––––––––––
 
-bg="#232627cc"
-fg="#ecf2ff"
-accent1="#40a5da"
-accent2="#2080bb"
-error="#e2266e"
-keyhl="#72e69a"
-sep="#afb3bd"
-layout="#ffffff"
+# ── COLORS ───────────────────────────────────────────
+
+bg="#232627cc"        # background
+fg="#ecf2ff"          # foreground
+accent1="#40a5da"     # light blue
+accent2="#2080bb"     # darker blue
+error="#e2266e"       # red
+keyhl="#72e69a"       # green accent
+sep="#afb3bd"         # separator
+layout="#ffffff"      # layout text
 
 
 # ── LOCKSCREEN ────────────────────────────────────────
