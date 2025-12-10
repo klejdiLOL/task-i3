@@ -64,6 +64,7 @@ install -Dm 775 .config/micro/info-settings.json-file.txt %{buildroot}%{_sysconf
 install -Dm 775 .config/micro/settings.json %{buildroot}%{_sysconfdir}/skel/.config/micro/
 install -Dm 775 .config/micro/colorschemes/om-dark.micro %{buildroot}%{_sysconfdir}/skel/.config/micro/colorschemes
 install -Dm 775 .config/picom/picom.conf %{buildroot}%{_sysconfdir}/skel/.config/picom/
+install -Dm 775 .config/dunst/dunstrc %{buildroot}%{_sysconfdir}/skel/.config/dunst/
 
 
 install -Dm 775 .config/polybar/colors.ini %{buildroot}%{_sysconfdir}/skel/.config/polybar/
@@ -99,6 +100,7 @@ echo "  install-i3-theme"
 %{_sysconfdir}/skel/.config/conky
 %{_sysconfdir}/skel/.config/i3
 %{_sysconfdir}/skel/.config/i3lock-color
+%{_sysconfdir}/skel/.config/dunst
 %{_sysconfdir}/skel/.config/kitty
 %{_sysconfdir}/skel/.config/micro
 %{_sysconfdir}/skel/.config/picom
