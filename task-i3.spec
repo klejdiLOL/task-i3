@@ -81,7 +81,6 @@ install -Dm 775 .config/polybar/scripts/rofi/message.rasi %{buildroot}%{_sysconf
 install -Dm 775 .config/polybar/scripts/rofi/networkmenu.rasi %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi/
 install -Dm 775 .config/polybar/scripts/rofi/powermenu.rasi %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi/
 install -Dm 775 .config/polybar/scripts/rofi/styles.rasi %{buildroot}%{_sysconfdir}/skel/.config/polybar/scripts/rofi/
-install -Dm 775 install-i3-theme %{buildroot}%{_bindir}/
 
 install -Dm 775 install-i3-theme %{buildroot}%{_bindir}/
 
