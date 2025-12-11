@@ -36,7 +36,6 @@ Requires: pavucontrol-qt
 Requires: i3lock-color
 Requires: papirus-icon-theme
 Requires: fonts-ttf-liberation
-Requires: arandr
 Requires: polkit-kde-agent-1
 Requires: kwallet-pam
 Requires: sddm-theme-breeze
