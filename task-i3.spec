@@ -21,7 +21,7 @@ Requires: kitty
 Requires: conky
 Requires: picom
 Requires: feh
-Requires: ranger
+#Requires: ranger
 Requires: micro
 Requires: dnfdrake
 Requires: chromium
@@ -44,6 +44,7 @@ Requires: distro-release-theme
 Requires: flameshot
 Requires: pcmanfm-qt
 Requires: dunst
+#Requires: arandr
 
 %description
 %summary.
