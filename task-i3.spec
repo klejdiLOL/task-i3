@@ -14,7 +14,7 @@ URL:		https://github.com/klejdiLOL/task-i3
 License:	GPL
 Group:		test
 
-Requires: i3-gaps
+Requires: i3-wm
 Requires: polybar
 Requires: rofi
 Requires: kitty
